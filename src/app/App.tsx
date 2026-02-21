@@ -1,17 +1,15 @@
-import React, {Suspense} from "react";
-
-import AboutPage from "../pages/AboutPage/AboutPage";
-import MainPage from "../pages/MainPage/MainPage";
-import {Link, Route, Routes} from "react-router-dom";
-import {AboutPageAsync} from "../pages/AboutPage/AboutPage.async";
-import {MainPageAsync} from "../pages/MainPage/MainPage.async";
+import React, {Suspense, useContext, useState} from "react";
 import AppRouter from "./providers/router/ui/AppRouter";
 import {Navbar} from "../widgets/Navbar";
 import {classNames} from "../shared/lib/classNames/classNames";
+import useTheme from "../theme/useTheme";
 
 const App:React.FC = () => {
-    return <div className={classNames('app', {hovered: true, red: false}, ['light', 'cls2'])}>
+    const {theme, toggleTheme} = useTheme();
+
+    return <div className={classNames('app', {hovered: true, red: false}, [theme])}>
         <h1>App</h1>
+        <button onClick={toggleTheme}>Toggle</button>
         <Navbar/>
         <AppRouter/>
 
