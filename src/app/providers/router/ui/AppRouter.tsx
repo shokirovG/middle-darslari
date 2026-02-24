@@ -1,18 +1,14 @@
 import React, {Suspense} from 'react';
-
-
-
 import {Route, Routes} from "react-router-dom";
-import {AboutPageAsync} from "../../../../pages/AboutPage/AboutPage.async";
-import {MainPageAsync} from "../../../../pages/MainPage/MainPage.async";
+import {routeConfig} from "../../../../shared/config/routeConfig/routeConfig";
 const AppRouter = () => {
     return (
 
             <Suspense fallback={<div>Loading...</div>}>
                 <Routes>
-
-                    <Route path="/about" element={<AboutPageAsync />} />
-                    <Route path="/" element={<MainPageAsync />} />
+                    {Object.values(routeConfig).map(({element, path})=> (
+                        <Route path={path} element={element} />
+                    ))}
                 </Routes>
             </Suspense>
 

@@ -1,8 +1,8 @@
 import React, {Suspense, useContext, useState} from "react";
-import AppRouter from "./providers/router/ui/AppRouter";
+import {AppRouter} from "./providers/router";
 import {Navbar} from "../widgets/Navbar";
 import {classNames} from "../shared/lib/classNames/classNames";
-import useTheme from "../theme/useTheme";
+import {useTheme} from "./providers/ThemeProvider";
 
 const App:React.FC = () => {
     const {theme, toggleTheme} = useTheme();
