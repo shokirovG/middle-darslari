@@ -4,7 +4,7 @@ import {Navbar} from "../widgets/Navbar";
 import {classNames} from "../shared/lib/classNames/classNames";
 import {useTheme} from "./providers/ThemeProvider";
 import { Sidebar } from "../widgets/Sidebar";
-import LangSwitcher from "../shared/ui/LangSwitcher/LangSwitcher";
+
 
 
 
@@ -12,13 +12,13 @@ import LangSwitcher from "../shared/ui/LangSwitcher/LangSwitcher";
 
 
 const App:React.FC = () => {
-    const {theme} = useTheme();
+    const {theme   } = useTheme();
 
     return <div className={classNames('app', {hovered: true, red: false}, [theme])}>
         <div className={classNames('app', {}, [theme])}>
             <Suspense fallback="">
                 <Navbar />
-                <div className="content-page">
+                <div className="content-page ">
 
                     <Sidebar />
                     <AppRouter />

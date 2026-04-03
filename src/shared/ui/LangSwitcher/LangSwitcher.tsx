@@ -14,10 +14,11 @@ const LangSwitcher = () => {
             <Button onClick={toggle}>
                 {
                     t("Перевод")
+
                 }
             </Button>
             {
-                t("Тестовый перевод")
+                t("Привет")
             }
         </div>
     )
