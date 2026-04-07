@@ -8,5 +8,5 @@ export function classNames(cls: string, mods: Mods, additional: string[]):string
                 .filter(([className, value])=> Boolean(value))
                 .map(([classname])=> classname)
         ]
-         .join(" ")
+         .join(" ").trim()
 }
