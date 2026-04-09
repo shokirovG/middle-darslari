@@ -5,17 +5,21 @@ import "./app/styles/index.scss";
 import {BrowserRouter} from "react-router-dom";
 import {ThemeProvider} from "./app/providers/ThemeProvider";
 import "./shared/config/i18n/i18n";
+import {ErrorBoundary} from "./app/providers/ErrorBoundary";
+
 const rootElement = document.getElementById("root");
 if (rootElement) {
     const root = createRoot(rootElement);
     root.render(
-        <ThemeProvider>
-            <BrowserRouter>
+
+
+    <BrowserRouter>
+        <ErrorBoundary>
+            <ThemeProvider>
                 <App />
-            </BrowserRouter>
-
-        </ThemeProvider>
-
+            </ThemeProvider>
+        </ErrorBoundary>
+    </BrowserRouter>
 
     );
 }
