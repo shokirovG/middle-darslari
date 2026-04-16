@@ -20,9 +20,7 @@ const config: Config = {
     coveragePathIgnorePatterns: [
         "\\\\node_modules\\\\"
     ],
-    moduleDirectories: [
-        "node_modules"
-    ],
+
     testEnvironment: "jsdom",
     testPathIgnorePatterns: [
         "\\\\node_modules\\\\"
@@ -40,7 +38,15 @@ const config: Config = {
         "node"
     ],
     rootDir: '../../',
-    testMatch: [  '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)']
+    testMatch: [  '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'],
+    setupFilesAfterEnv: ['<rootDir>/config/jest/setupTests.ts'],
+    moduleNameMapper: {
+
+        '\\.s?css$': 'identity-obj-proxy',
+    },
+    moduleDirectories: ["node_modules", "src"],
+
+    transformIgnorePatterns: ['<rootDir>/node_modules'],
 
     // Indicates whether the coverage information should be collected while executing the test
   // collectCoverage: false,
