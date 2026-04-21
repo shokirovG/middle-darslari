@@ -7,9 +7,10 @@
     "target": "es2018",
     "jsx": "react-jsx",
     "allowJs": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "types": ["node", "jest", "@testing-library/jest-dom"]
   },
   "ts-node": {
     "compilerOptions": {

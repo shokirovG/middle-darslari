@@ -4,7 +4,12 @@
  */
 
 import type {Config} from 'jest';
+import path from "path";
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 const config: Config = {
   // All imported modules in your tests should be mocked automatically
   // automock: false,
@@ -41,8 +46,9 @@ const config: Config = {
     testMatch: [  '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'],
     setupFilesAfterEnv: ['<rootDir>/config/jest/setupTests.ts'],
     moduleNameMapper: {
-
-        '\\.s?css$': 'identity-obj-proxy',
+        '\\.s?css$': path.resolve(__dirname, 'jestStyleMock.ts'),
+        // '\\.s?css$': 'identity-obj-proxy',
+        '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx')
     },
     moduleDirectories: ["node_modules", "src"],
 
