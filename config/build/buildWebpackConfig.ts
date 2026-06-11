@@ -20,7 +20,7 @@ export function buildWebpackConfig(options:BuildOptions):webpack.Configuration{
             filename: '[name].[contenthash].js',
             clean: true
     },
-        devServer: buildDevServer(options),
+        devServer: options.isDev ? buildDevServer(options): undefined,
     plugins: buildPlugins(options),
 }
 
