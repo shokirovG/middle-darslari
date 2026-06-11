@@ -10,6 +10,7 @@ const config: StorybookConfig = {
     "@storybook/addon-a11y",
     "@storybook/addon-docs"
   ],
-  "framework": "@storybook/react-webpack5"
+  "framework": "@storybook/react-webpack5",
+
 };
 export default config;

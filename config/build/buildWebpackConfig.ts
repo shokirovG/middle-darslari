@@ -23,4 +23,5 @@ export function buildWebpackConfig(options:BuildOptions):webpack.Configuration{
         devServer: buildDevServer(options),
     plugins: buildPlugins(options),
 }
+
     }

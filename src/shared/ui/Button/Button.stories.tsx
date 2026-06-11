@@ -29,11 +29,12 @@ export const Secondary: Story = {
     },
 };
 
-export const Primary: Story = {
+
+
+export const Outline: Story = {
     args: {
         children: 'button',
         theme: ThemeButton.OUTLINE
     },
 };
-
 
